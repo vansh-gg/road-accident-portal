@@ -9,8 +9,7 @@ const categories = [
     title: "Compensation",
     description: "Understand central and state schemes that provide financial relief after a road accident.",
     tone: "navy",
-    icon: <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M13 4H6.5C5.12 4 4 5.12 4 6.5S5.12 9 6.5 9H11.5C12.88 9 14 10.12 14 11.5S12.88 14 11.5 14H4" stroke="white" strokeWidth="1.6" strokeLinecap="round"/></svg>,
-  },
+    icon: <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><text x="9" y="13.5" textAnchor="middle" fontSize="13" fontWeight="700" fill="white" fontFamily="Arial, sans-serif">₹</text></svg>,  },
   {
     title: "Legal Aid",
     description: "Learn how District Legal Services Authorities and MACT support victims and families.",
