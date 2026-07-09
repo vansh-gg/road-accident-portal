@@ -1,0 +1,345 @@
+[
+  {
+    "id": "pm-rahat-scheme",
+    "name": "PM-RAHAT Scheme (Cashless Treatment)",
+    "category": "Emergency Treatment",
+    "type": "Central",
+    "description": "Free, cashless emergency treatment for every road accident victim during the critical 'golden hour', regardless of who was at fault.",
+    "eligibility": [
+      "Applies to every road accident victim, regardless of fault",
+      "Treatment must be sought at a hospital empanelled under the scheme"
+    ],
+    "benefits": [
+      "Up to ₹1.5 lakh of free treatment per victim",
+      "Covers up to 7 days of treatment from the date of the accident",
+      "No payment needed at the time of treatment; police verification happens separately and is not the victim's responsibility"
+    ],
+    "documents": [],
+    "process": [
+      "Call 112 and ask for the nearest designated/empanelled hospital under the scheme",
+      "Visit the nearest empanelled hospital for treatment",
+      "Treatment starts immediately with no upfront payment",
+      "Police verification happens in parallel and does not need to be arranged by the victim"
+    ],
+    "whereToApply": "Any hospital empanelled under the PM-RAHAT scheme. Call 112 (Ambulance & Police) to locate the nearest one.",
+    "notes": "Even private hospitals must provide initial treatment. If a hospital refuses treatment, report it to the district authority or call 14555 (hospital refusal helpline). For free legal help at any stage, call the NALSA helpline on 15100."
+  },
+  {
+    "id": "hit-and-run-compensation",
+    "name": "Hit and Run Compensation Scheme",
+    "category": "Compensation",
+    "type": "Central",
+    "description": "Financial relief for victims or legal heirs when the vehicle that caused the accident fled the scene and could not be identified, even after police investigation.",
+    "eligibility": [
+      "The driver or vehicle fled the scene",
+      "The vehicle was not identified even after police investigation",
+      "If the vehicle is identified later, the case moves to Section 164 (no-fault) or Section 166 (fault-based) instead, where compensation amounts are higher"
+    ],
+    "benefits": [
+      "₹50,000 for grievous injuries (severe hurt as legally defined)",
+      "₹2,00,000 in case of death, claimable by the legal heir",
+      "Also applicable to the legal heir of a person who sustained grievous injuries and later died of a cause unrelated to the accident"
+    ],
+    "documents": [
+      "FIR copy",
+      "Post-mortem report or injury report",
+      "Death certificate (for death cases)",
+      "Bank passbook",
+      "Identity proof (e.g. Aadhaar)"
+    ],
+    "process": [
+      "Police must inform the victim/family about this scheme and transfer the file to the Claims Enquiry Officer / Sub Divisional Officer",
+      "Visit the Claims Enquiry Officer (CEO) with a copy of the FIR, post-mortem/injury report, death certificate, bank passbook, and ID proof",
+      "Submit Form I",
+      "The file is stamped 'Processing' and a case is opened for compensation"
+    ],
+    "whereToApply": "Claims Enquiry Officer / Sub Divisional Officer (SDO) notified for the district, following transfer of the file by the police.",
+    "notes": "You can use more than one compensation door if applicable — Hit & Run, Section 164 (no-fault), and Section 166 (fault-based) are separate pathways. For free legal help at any stage, call NALSA on 15100."
+  },
+  {
+    "id": "section-164-no-fault-compensation",
+    "name": "Section 164 — No-Fault Compensation",
+    "category": "Compensation",
+    "type": "Central",
+    "description": "Fixed, immediate relief compensation that does not require proving who caused the accident. Filed directly with the Motor Accident Claims Tribunal (MACT).",
+    "eligibility": [
+      "Applies when the vehicle involved is known but negligence/fault is not clearly established",
+      "No need to prove who caused the accident"
+    ],
+    "benefits": [
+      "₹2,50,000 for grievous injury",
+      "₹5,00,000 in case of death",
+      "Faster to settle than a fault-based claim, giving quick relief without a long court fight",
+      "Does not prevent applying later under Section 166 for higher compensation once fault or fuller losses are established"
+    ],
+    "documents": [
+      "FIR copy",
+      "Death certificate (for death cases)",
+      "Disability certificate (for disability cases)",
+      "Aadhaar or other identity proof",
+      "Birth proof",
+      "Dependency proof (for dependents claiming after a death)"
+    ],
+    "process": [
+      "File a claim directly with the Motor Accident Claims Tribunal (MACT)",
+      "Keep FIR, death/disability certificate, Aadhaar, birth proof, and dependency proof ready — a lawyer or DLSA paralegal can help gather these for free",
+      "After filing, you receive a case number and the tribunal notifies the insurer and schedules a hearing",
+      "Section 164 claims are generally faster to settle than Section 166 claims"
+    ],
+    "whereToApply": "Motor Accident Claims Tribunal (MACT) in the concerned district.",
+    "notes": "This is immediate relief support. For free legal help with filing, call NALSA on 15100 or contact your District Legal Services Authority (DLSA)."
+  },
+  {
+    "id": "section-166-fault-based-compensation",
+    "name": "Section 166 — Fault-Based Compensation",
+    "category": "Compensation",
+    "type": "Central",
+    "description": "Full compensation claim for cases where the crash was clearly caused by someone else's negligence, such as drunk driving, overspeeding, or wrong-side driving.",
+    "eligibility": [
+      "The crash was clearly someone else's fault — for example drunk driving, overspeeding, or wrong-side driving",
+      "Best suited to serious injury cases or loss of the family's main earner, where negligence is clear and losses are long-term"
+    ],
+    "benefits": [
+      "Covers the full picture of losses: medical costs, lost income, and emotional suffering",
+      "Can account for future care needs, not just immediate costs",
+      "Generally results in higher compensation than Section 164, but takes longer to settle"
+    ],
+    "documents": [
+      "FIR copy",
+      "Death certificate or disability certificate, as applicable",
+      "Aadhaar or other identity proof",
+      "Birth proof",
+      "Dependency proof, medical bills, and income proof to support the full claim"
+    ],
+    "process": [
+      "File a fault-based claim petition before the Motor Accident Claims Tribunal (MACT)",
+      "Present evidence establishing the other party's negligence (e.g. drunk driving, overspeeding)",
+      "Support the claim with medical bills, income loss evidence, and future care cost estimates",
+      "Attend hearings; the tribunal decides the final compensation award"
+    ],
+    "whereToApply": "Motor Accident Claims Tribunal (MACT) in the concerned district.",
+    "notes": "Section 166 takes longer to settle than Section 164 but covers all losses. You can pursue Section 164 first for quick relief, then Section 166 for the fuller amount. For free legal help, call NALSA on 15100 or contact your DLSA."
+  },
+  {
+    "id": "legal-aid-dlsa",
+    "name": "Legal Aid through District Legal Services Authority",
+    "category": "Legal Aid",
+    "type": "Guidance",
+    "description": "Free or subsidised legal assistance for eligible individuals to help them understand and pursue accident compensation claims.",
+    "eligibility": [
+      "Individuals from economically weaker sections, women, children, and other eligible categories as defined under legal services rules",
+      "Persons unable to independently pursue a compensation or legal claim"
+    ],
+    "benefits": [
+      "Free legal advice and representation for eligible applicants",
+      "Assistance with drafting and filing claim petitions",
+      "Guidance on court procedures and documentation"
+    ],
+    "documents": [
+      "Identity proof",
+      "Income certificate, if applicable",
+      "Accident-related documents (FIR, medical report)",
+      "Any existing correspondence related to the case"
+    ],
+    "process": [
+      "Visit or contact the District Legal Services Authority (DLSA) office",
+      "Explain the case and submit eligibility documents",
+      "Receive guidance or assigned legal representation, if eligible"
+    ],
+    "whereToApply": "District Legal Services Authority (DLSA) office in the concerned district, or the State Legal Services Authority helpline.",
+    "notes": "Eligibility criteria and services vary by state. Users should confirm current eligibility norms with their local DLSA."
+  },
+  {
+    "id": "disability-certificate-support",
+    "name": "Disability Certificate Support",
+    "category": "Rehabilitation",
+    "type": "Guidance",
+    "description": "Guidance on obtaining an official disability certificate for accident survivors with long-term physical impact, which is often required for compensation and rehabilitation benefits.",
+    "eligibility": [
+      "Accident survivor with a permanent or long-term physical impairment",
+      "Assessment by an authorised medical board"
+    ],
+    "benefits": [
+      "Official recognition of disability for compensation and benefit purposes",
+      "Access to disability-related welfare schemes and concessions",
+      "Supporting document for rehabilitation and employment support programs"
+    ],
+    "documents": [
+      "Medical records and treatment history",
+      "Identity proof",
+      "Passport-size photographs",
+      "Referral letter from treating hospital, if available"
+    ],
+    "process": [
+      "Consult the treating hospital for a referral to the medical board",
+      "Attend assessment at the designated government hospital or medical board",
+      "Receive the disability certificate after evaluation",
+      "Use the certificate to apply for related benefits and support"
+    ],
+    "whereToApply": "District government hospital or medical board authorised to issue disability certificates.",
+    "notes": "Assessment criteria and certificate formats can vary by state. Confirm the nearest authorised medical board with local health authorities."
+  },
+  {
+    "id": "rehabilitation-support-survivors",
+    "name": "Rehabilitation Support for Accident Survivors",
+    "category": "Rehabilitation",
+    "type": "NGO/Support",
+    "description": "Guidance on physical, psychological, and vocational rehabilitation support available to accident survivors during recovery.",
+    "eligibility": [
+      "Accident survivors requiring physical therapy, psychological support, or vocational retraining",
+      "Open to all survivors regardless of case status"
+    ],
+    "benefits": [
+      "Access to physiotherapy and rehabilitation guidance",
+      "Psychological and emotional support resources",
+      "Vocational training and reintegration support through NGOs and community programs"
+    ],
+    "documents": [
+      "Medical records",
+      "Discharge summary",
+      "Identity proof"
+    ],
+    "process": [
+      "Consult the treating hospital's rehabilitation department, if available",
+      "Reach out to local NGOs or road safety organisations for support programs",
+      "Enrol in physiotherapy, counselling, or vocational programs as recommended"
+    ],
+    "whereToApply": "Hospital rehabilitation departments, state health department programs, or local NGOs working in road safety and disability support.",
+    "notes": "Availability of rehabilitation programs varies by location. Verify current programs with local health authorities or NGOs."
+  },
+  {
+    "id": "emergency-medical-documentation",
+    "name": "Emergency Medical Documentation Guidance",
+    "category": "Documents",
+    "type": "Guidance",
+    "description": "Guidance on the medical documentation typically required immediately after a road accident, which forms the basis for later compensation and legal claims.",
+    "eligibility": [
+      "Applicable to all accident victims receiving emergency medical treatment"
+    ],
+    "benefits": [
+      "Clear understanding of documents needed at the time of treatment",
+      "Reduced difficulty in later compensation and legal processes"
+    ],
+    "documents": [
+      "Medical report / admission record",
+      "Discharge summary",
+      "Hospital bills and receipts",
+      "X-rays, scans, and diagnostic reports",
+      "Post-mortem report, if applicable"
+    ],
+    "process": [
+      "Ensure the victim is admitted and treated at a recognised hospital",
+      "Request copies of all medical records and bills at the time of treatment or discharge",
+      "Preserve original documents safely for future reference"
+    ],
+    "whereToApply": "Treating hospital's medical records or billing department.",
+    "notes": "Hospitals may have specific procedures for issuing certified copies. Confirm requirements directly with the treating hospital."
+  },
+  {
+    "id": "legal-heir-documentation",
+    "name": "Legal Heir Documentation for Death Cases",
+    "category": "Documents",
+    "type": "Guidance",
+    "description": "Guidance on obtaining legal heir certificates and related documents required when a road accident results in the death of a family member.",
+    "eligibility": [
+      "Family members of a deceased accident victim seeking compensation or benefit transfer"
+    ],
+    "benefits": [
+      "Legal recognition of heirs for compensation, insurance, and benefit claims",
+      "Simplifies bank account and asset-related processes"
+    ],
+    "documents": [
+      "Death certificate",
+      "Identity proof of applicant and deceased",
+      "Address proof",
+      "Family/relationship proof (ration card, family register, etc.)"
+    ],
+    "process": [
+      "Obtain the death certificate from the municipal or local body",
+      "Apply for a legal heir certificate at the local revenue or tehsil office",
+      "Use the certificate for compensation, insurance, and bank-related claims"
+    ],
+    "whereToApply": "Local Tehsildar office, revenue department, or municipal authority.",
+    "notes": "Process and required documents can vary by state. Confirm the exact procedure with the local revenue office."
+  },
+  {
+    "id": "state-road-accident-support",
+    "name": "State Road Accident Victim Support",
+    "category": "Compensation",
+    "type": "State",
+    "description": "Illustrative placeholder for state-specific road accident victim support schemes, which may offer additional compensation or assistance beyond central schemes.",
+    "eligibility": [
+      "Residents of the concerned state involved in a road accident",
+      "Specific eligibility criteria set by the respective state government"
+    ],
+    "benefits": [
+      "Additional financial assistance beyond central compensation, where applicable",
+      "State-specific rehabilitation or welfare support"
+    ],
+    "documents": [
+      "FIR copy",
+      "Medical or death certificate",
+      "Residence proof",
+      "Identity proof"
+    ],
+    "process": [
+      "Check with the state transport or social welfare department for applicable schemes",
+      "Submit an application with required documents at the designated office",
+      "Follow up through the state helpline or office"
+    ],
+    "whereToApply": "State Transport Department or State Social Welfare Department office.",
+    "notes": "This entry is illustrative. Actual state schemes vary widely; users must check with their respective state government for accurate, current details."
+  },
+  {
+    "id": "insurance-claim-documentation",
+    "name": "Insurance Claim Documentation Guidance",
+    "category": "Documents",
+    "type": "Guidance",
+    "description": "Guidance on documentation typically needed to file a motor insurance claim following a road accident.",
+    "eligibility": [
+      "Vehicle involved in the accident has a valid insurance policy",
+      "Claim is intimated to the insurer within the specified timeframe"
+    ],
+    "benefits": [
+      "Structured guidance to help file a smoother insurance claim",
+      "Reduced chances of claim delay due to missing documents"
+    ],
+    "documents": [
+      "Insurance policy copy",
+      "FIR copy, where applicable",
+      "Driving licence and RC of the vehicle",
+      "Repair estimate or medical bills, as applicable",
+      "Photographs of the accident and damage"
+    ],
+    "process": [
+      "Inform the insurance company about the accident as soon as possible",
+      "Register a claim with the required documents",
+      "Cooperate with the surveyor or claims officer during assessment",
+      "Track claim status with the insurer"
+    ],
+    "whereToApply": "Concerned motor insurance company or its nearest branch/office.",
+    "notes": "Claim procedures and timelines differ by insurer. Confirm specific requirements with the concerned insurance company."
+  },
+  {
+    "id": "good-samaritan-awareness",
+    "name": "Good Samaritan Awareness Resource",
+    "category": "Awareness",
+    "type": "Guidance",
+    "description": "Awareness resource explaining the legal protections available to bystanders who help accident victims, encouraging timely assistance without fear of harassment.",
+    "eligibility": [
+      "Applicable to any bystander or witness assisting an accident victim in good faith"
+    ],
+    "benefits": [
+      "Legal protection from unnecessary questioning or procedural harassment for good-faith helpers",
+      "Encourages faster emergency response and higher survival chances"
+    ],
+    "documents": [],
+    "process": [
+      "If safe to do so, call emergency services or the nearest hospital immediately",
+      "Assist the victim to reach medical care without waiting for police formalities",
+      "Provide basic information to authorities if asked, in good faith"
+    ],
+    "whereToApply": "Not applicable — this is an awareness resource, not an application-based scheme.",
+    "notes": "Good Samaritan protections and their exact scope are defined under applicable guidelines and law. This summary is for awareness only and does not constitute legal advice."
+  }
+]
