@@ -93,7 +93,7 @@ export default function Home() {
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20108%20Ambulance.jpg?width=1600"
               alt="An emergency ambulance in India"
-              className="w-full h-56 sm:h-72 object-cover"
+              className="w-full aspect-[16/9] object-cover"
               loading="lazy"
             />
           </div>
