@@ -12,9 +12,17 @@ export function LanguageProvider({ children }) {
     }
   });
 
+  // "Have they chosen a language THIS SESSION" — deliberately uses
+  // sessionStorage, not localStorage. This means the welcome splash
+  // reappears every time the site is freshly opened (new tab, browser
+  // restart, next day, etc.) but won't re-show on every page navigation
+  // within the same visit. The actual language preference (`lang` above)
+  // still persists permanently via localStorage, so once someone picks
+  // Hindi mid-session, the rest of that session stays in Hindi even if the
+  // splash logic resets on their next visit.
   const [hasChosen, setHasChosen] = useState(() => {
     try {
-      return localStorage.getItem("rakshasetu-lang-chosen") === "true";
+      return sessionStorage.getItem("rakshasetu-lang-chosen") === "true";
     } catch {
       return false;
     }
@@ -31,15 +39,13 @@ export function LanguageProvider({ children }) {
 
   const toggleLang = () => setLang((l) => (l === "en" ? "hi" : "en"));
 
-  // Used by the first-visit splash: sets the language AND marks the choice
-  // as made, so the splash never shows again on this device.
   const chooseLang = (value) => {
     setLang(value);
     setHasChosen(true);
     try {
-      localStorage.setItem("rakshasetu-lang-chosen", "true");
+      sessionStorage.setItem("rakshasetu-lang-chosen", "true");
     } catch {
-      // localStorage unavailable — splash may reappear on next visit
+      // sessionStorage unavailable — splash may reappear on next page load
     }
   };
 
