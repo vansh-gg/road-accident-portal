@@ -2,11 +2,13 @@ import { useMemo, useState } from "react";
 import SchemeCard from "../components/SchemeCard";
 import SectionHeader from "../components/SectionHeader";
 import schemes from "../data/schemes.json";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const categories = ["All", "Emergency Treatment", "Compensation", "Legal Aid", "Rehabilitation", "Documents", "Awareness"];
 const types = ["All", "Central", "State", "NGO/Support", "Guidance"];
 
 export default function Schemes() {
+  const { t, lang } = useLanguage();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   const [type, setType] = useState("All");
@@ -26,10 +28,16 @@ export default function Schemes() {
   return (
     <div className="container-page py-14 sm:py-20">
       <SectionHeader
-        eyebrow="Scheme directory"
-        title="Browse all schemes and resources"
-        description="Search and filter through compensation, legal aid, rehabilitation, document, and awareness resources."
+        eyebrow={t("schemes_eyebrow")}
+        title={t("schemes_title")}
+        description={t("schemes_description")}
       />
+
+      {lang === "hi" && (
+        <div className="bg-[var(--color-amber-light)] rounded-lg px-4 py-3 text-xs text-[var(--color-ink)] mb-6 max-w-2xl">
+          {t("content_english_note")}
+        </div>
+      )}
 
       <div className="flex flex-col lg:flex-row gap-4 mb-8">
         <div className="relative flex-1">
@@ -41,7 +49,7 @@ export default function Schemes() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search schemes by name or keyword"
+            placeholder={t("search_placeholder")}
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-[var(--color-line)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-teal)]"
           />
         </div>
@@ -51,7 +59,7 @@ export default function Schemes() {
           onChange={(e) => setCategory(e.target.value)}
           className="px-4 py-3 rounded-lg border border-[var(--color-line)] text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-teal)]"
         >
-          {categories.map((c) => <option key={c} value={c}>{c === "All" ? "All categories" : c}</option>)}
+          {categories.map((c) => <option key={c} value={c}>{c === "All" ? t("all_categories") : c}</option>)}
         </select>
 
         <select
@@ -59,12 +67,12 @@ export default function Schemes() {
           onChange={(e) => setType(e.target.value)}
           className="px-4 py-3 rounded-lg border border-[var(--color-line)] text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-teal)]"
         >
-          {types.map((t) => <option key={t} value={t}>{t === "All" ? "All types" : t}</option>)}
+          {types.map((ty) => <option key={ty} value={ty}>{ty === "All" ? t("all_types") : ty}</option>)}
         </select>
       </div>
 
       <p className="text-sm text-[var(--color-slate)] mb-6">
-        Showing {filtered.length} of {schemes.length} schemes and resources
+        {t("showing_results").replace("{count}", filtered.length).replace("{total}", schemes.length)}
       </p>
 
       {filtered.length > 0 ? (
@@ -73,7 +81,7 @@ export default function Schemes() {
         </div>
       ) : (
         <div className="text-center py-16 border border-dashed border-[var(--color-line)] rounded-xl">
-          <p className="text-[var(--color-slate)]">No schemes match your search. Try a different keyword or filter.</p>
+          <p className="text-[var(--color-slate)]">{t("no_schemes_match")}</p>
         </div>
       )}
     </div>

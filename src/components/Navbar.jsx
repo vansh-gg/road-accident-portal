@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/find-my-scheme", label: "Find My Scheme" },
-  { to: "/schemes", label: "Schemes" },
-  { to: "/documents", label: "Documents" },
-  { to: "/legal-aid", label: "Legal Aid" },
-  { to: "/road-safety", label: "Road Safety" },
-  { to: "/about", label: "About" },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t, lang, toggleLang } = useLanguage();
+
+  const links = [
+    { to: "/", label: t("nav_home") },
+    { to: "/find-my-scheme", label: t("nav_find") },
+    { to: "/schemes", label: t("nav_schemes") },
+    { to: "/documents", label: t("nav_documents") },
+    { to: "/legal-aid", label: t("nav_legal") },
+    { to: "/road-safety", label: t("nav_road_safety") },
+    { to: "/about", label: t("nav_about") },
+  ];
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-[var(--color-line)]">
@@ -41,19 +43,29 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button
-          className="md:hidden w-10 h-10 flex items-center justify-center rounded-md border border-[var(--color-line)]"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span className="sr-only">Toggle navigation</span>
-          {open ? (
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1L17 17M17 1L1 17" stroke="#16213A" strokeWidth="2" strokeLinecap="round"/></svg>
-          ) : (
-            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="#16213A" strokeWidth="2"/></svg>
-          )}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggleLang}
+            className="w-10 h-10 sm:w-auto sm:px-3 flex items-center justify-center rounded-md border border-[var(--color-line)] text-sm font-semibold text-[var(--color-navy)] hover:bg-[var(--color-paper)] transition-colors"
+            aria-label={lang === "en" ? "हिंदी में देखें" : "View in English"}
+          >
+            {t("nav_toggle_lang")}
+          </button>
+
+          <button
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-md border border-[var(--color-line)]"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span className="sr-only">Toggle navigation</span>
+            {open ? (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1L17 17M17 1L1 17" stroke="#16213A" strokeWidth="2" strokeLinecap="round"/></svg>
+            ) : (
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="#16213A" strokeWidth="2"/></svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {open && (

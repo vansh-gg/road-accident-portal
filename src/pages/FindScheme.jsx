@@ -3,39 +3,69 @@ import QuestionCard from "../components/QuestionCard";
 import SchemeCard from "../components/SchemeCard";
 import SectionHeader from "../components/SectionHeader";
 import schemes from "../data/schemes.json";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const questions = [
-  {
-    key: "applyingFor",
-    question: "Who are you applying for?",
-    options: ["Myself", "Family member", "Someone I know"],
-  },
-  {
-    key: "outcome",
-    question: "What was the accident outcome?",
-    options: ["Injury", "Disability", "Death"],
-  },
-  {
-    key: "hitAndRun",
-    question: "Was it a hit-and-run case?",
-    options: ["Yes", "No", "Not sure"],
-  },
-  {
-    key: "firFiled",
-    question: "Was an FIR filed?",
-    options: ["Yes", "No", "In process"],
-  },
-  {
-    key: "vehicleIdentified",
-    question: "Was the vehicle identified?",
-    options: ["Yes", "No", "Not sure"],
-  },
-  {
-    key: "supportNeeded",
-    question: "Which support do you need?",
-    options: ["Compensation", "Legal Aid", "Rehabilitation", "Document Guidance"],
-  },
-];
+// Internal answer values stay in English so recommend() logic never has to
+// change based on language. Only the displayed labels are translated.
+function buildQuestions(t) {
+  return [
+    {
+      key: "applyingFor",
+      question: t("q_applying_for"),
+      options: [
+        { value: "Myself", label: t("opt_myself") },
+        { value: "Family member", label: t("opt_family_member") },
+        { value: "Someone I know", label: t("opt_someone_i_know") },
+      ],
+    },
+    {
+      key: "outcome",
+      question: t("q_outcome"),
+      options: [
+        { value: "Injury", label: t("opt_injury") },
+        { value: "Disability", label: t("opt_disability") },
+        { value: "Death", label: t("opt_death") },
+      ],
+    },
+    {
+      key: "hitAndRun",
+      question: t("q_hit_and_run"),
+      options: [
+        { value: "Yes", label: t("opt_yes") },
+        { value: "No", label: t("opt_no") },
+        { value: "Not sure", label: t("opt_not_sure") },
+      ],
+    },
+    {
+      key: "firFiled",
+      question: t("q_fir"),
+      options: [
+        { value: "Yes", label: t("opt_yes") },
+        { value: "No", label: t("opt_no") },
+        { value: "In process", label: t("opt_in_process") },
+      ],
+    },
+    {
+      key: "vehicleIdentified",
+      question: t("q_vehicle_identified"),
+      options: [
+        { value: "Yes", label: t("opt_yes") },
+        { value: "No", label: t("opt_no") },
+        { value: "Not sure", label: t("opt_not_sure") },
+      ],
+    },
+    {
+      key: "supportNeeded",
+      question: t("q_support_needed"),
+      options: [
+        { value: "Compensation", label: t("opt_compensation") },
+        { value: "Legal Aid", label: t("opt_legal_aid") },
+        { value: "Rehabilitation", label: t("opt_rehabilitation") },
+        { value: "Document Guidance", label: t("opt_document_guidance") },
+      ],
+    },
+  ];
+}
 
 function getSchemeById(id) {
   return schemes.find((s) => s.id === id);
@@ -102,6 +132,8 @@ function recommend(answers) {
 }
 
 export default function FindScheme() {
+  const { t } = useLanguage();
+  const questions = useMemo(() => buildQuestions(t), [t]);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -130,9 +162,9 @@ export default function FindScheme() {
   return (
     <div className="container-page py-14 sm:py-20">
       <SectionHeader
-        eyebrow="Guided questionnaire"
-        title="Find My Scheme"
-        description="Answer a few short questions about the accident. Based on your answers, we'll point you to schemes and resources that are most likely to be relevant."
+        eyebrow={t("find_eyebrow")}
+        title={t("find_title")}
+        description={t("find_description")}
       />
 
       {!submitted && (
@@ -158,7 +190,7 @@ export default function FindScheme() {
                 onClick={() => setStep((s) => s - 1)}
                 className="mt-4 text-sm font-medium text-[var(--color-slate)] hover:text-[var(--color-navy)]"
               >
-                &larr; Back
+                {t("find_back")}
               </button>
             )}
           </div>
@@ -169,14 +201,13 @@ export default function FindScheme() {
         <div>
           <div className="max-w-2xl bg-[var(--color-teal-light)] rounded-xl p-5 mb-8 flex items-start justify-between gap-4 flex-wrap">
             <p className="text-sm text-[var(--color-ink)]">
-              Based on your answers, here are the schemes and resources most
-              relevant to your situation.
+              {t("find_results_intro")}
             </p>
             <button
               onClick={restart}
               className="text-sm font-semibold text-[var(--color-navy)] whitespace-nowrap hover:text-[var(--color-teal)]"
             >
-              Start over
+              {t("find_start_over")}
             </button>
           </div>
 
@@ -190,9 +221,7 @@ export default function FindScheme() {
           </div>
 
           <p className="text-xs text-[var(--color-slate)] max-w-2xl border-t border-[var(--color-line)] pt-5">
-            Recommendations are based on basic inputs and are for informational
-            purposes only. Users should verify scheme details and eligibility
-            with official authorities.
+            {t("find_disclaimer")}
           </p>
         </div>
       )}

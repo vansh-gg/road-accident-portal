@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LanguageSplash from "./components/LanguageSplash";
 import Home from "./pages/Home";
 import FindScheme from "./pages/FindScheme";
 import Schemes from "./pages/Schemes";
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <a href="#main-content" className="skip-link">Skip to content</a>
+      <LanguageSplash />
       <ScrollToTop />
       <Navbar />
       <main id="main-content" className="flex-1">

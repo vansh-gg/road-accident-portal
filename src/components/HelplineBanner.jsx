@@ -1,14 +1,18 @@
-const helplines = [
-  { label: "Ambulance & Police", number: "112" },
-  { label: "Free Legal Help (NALSA)", number: "15100" },
-  { label: "Hospital Refusal Complaint", number: "14555" },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function HelplineBanner() {
+  const { t } = useLanguage();
+
+  const helplines = [
+    { label: t("helpline_ambulance"), number: "112" },
+    { label: t("helpline_legal"), number: "15100" },
+    { label: t("helpline_hospital"), number: "14555" },
+  ];
+
   return (
     <div className="bg-[var(--color-navy)] rounded-2xl p-6 sm:p-7 text-white">
       <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-teal-light)] mb-4">
-        Important helplines
+        {t("helpline_title")}
       </p>
       <div className="grid sm:grid-cols-3 gap-4">
         {helplines.map((h) => (
@@ -19,8 +23,7 @@ export default function HelplineBanner() {
         ))}
       </div>
       <p className="text-xs text-white/60 mt-4 leading-relaxed">
-        If you remember only 3 things: go to the nearest hospital for free treatment,
-        get a copy of the FIR, and call 15100 for free legal help.
+        {t("helpline_note")}
       </p>
     </div>
   );

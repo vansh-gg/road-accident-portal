@@ -263,32 +263,62 @@
     "notes": "Process and required documents can vary by state. Confirm the exact procedure with the local revenue office."
   },
   {
-    "id": "state-road-accident-support",
-    "name": "State Road Accident Victim Support",
+    "id": "mcdby-rajasthan-accident-insurance",
+    "name": "Mukhyamantri Chiranjeevi Accident Insurance Scheme (Rajasthan)",
     "category": "Compensation",
     "type": "State",
-    "description": "Illustrative placeholder for state-specific road accident victim support schemes, which may offer additional compensation or assistance beyond central schemes.",
+    "description": "Free accident insurance cover of up to ₹10 lakh for Rajasthan families already enrolled in the Chiranjeevi / Mukhyamantri Ayushman health insurance scheme, in case of accidental death or permanent total disability.",
     "eligibility": [
-      "Residents of the concerned state involved in a road accident",
-      "Specific eligibility criteria set by the respective state government"
+      "Family must already be insured under Mukhyamantri Chiranjeevi Swasthya Bima Yojana or the Rajasthan Government Health Scheme",
+      "Applies to accidental death, or permanent total loss of hands, legs, or eyes due to an accident",
+      "Claim must be filed within 60 days of the accident/death (extendable to 90 days with a valid reason)"
     ],
     "benefits": [
-      "Additional financial assistance beyond central compensation, where applicable",
-      "State-specific rehabilitation or welfare support"
+      "Free accident insurance cover of up to ₹10 lakh per insured family",
+      "Amount is paid directly into the bank account of the head of the family, linked to Jan Aadhaar",
+      "Runs alongside central schemes like PM-RAHAT, Hit & Run, and Section 164/166 — not a replacement for them"
     ],
     "documents": [
-      "FIR copy",
-      "Medical or death certificate",
-      "Residence proof",
-      "Identity proof"
+      "Jan Aadhaar card",
+      "Proof of enrolment under Chiranjeevi / Rajasthan Government Health Scheme",
+      "FIR copy or accident report",
+      "Death certificate or disability assessment, as applicable"
     ],
     "process": [
-      "Check with the state transport or social welfare department for applicable schemes",
-      "Submit an application with required documents at the designated office",
-      "Follow up through the state helpline or office"
+      "Any adult member of the insured family fills the claim form on the official online portal",
+      "Submit within 60 days of the accident (up to 90 days with a stated reason for delay)",
+      "A decision is communicated by SMS to the claimant's registered mobile number",
+      "Appeals can be filed online with the Director, State Insurance and Provident Fund Department, within 30 days of the decision"
     ],
-    "whereToApply": "State Transport Department or State Social Welfare Department office.",
-    "notes": "This entry is illustrative. Actual state schemes vary widely; users must check with their respective state government for accurate, current details."
+    "whereToApply": "State Insurance and Provident Fund Department, Rajasthan (online claim portal).",
+    "notes": "This is separate from central government schemes and is administered by the Rajasthan State Insurance and Provident Fund Department. Verify current portal links and forms directly with the department before applying."
+  },
+  {
+    "id": "cmrf-rajasthan-accident-assistance",
+    "name": "Rajasthan Chief Minister's Relief Fund — Accident Assistance",
+    "category": "Compensation",
+    "type": "State",
+    "description": "Emergency relief fund assistance from the Rajasthan state government for families affected by accidental death or serious injury, alongside its role in natural disaster relief.",
+    "eligibility": [
+      "Applies to families of those killed or seriously injured in an accident in Rajasthan",
+      "Assessed case-by-case by the Chief Minister's Relief Fund office"
+    ],
+    "benefits": [
+      "One-time financial assistance for accidental death or serious injury",
+      "Can be combined with central schemes (PM-RAHAT, Hit & Run, Section 164/166) and with MCDBY accident insurance, since it draws from a separate state relief fund"
+    ],
+    "documents": [
+      "Identity and address proof",
+      "FIR copy or accident report",
+      "Death certificate or medical certificate of injury"
+    ],
+    "process": [
+      "Visit cmrelief.rajasthan.gov.in and apply online, or apply through the local Collector/SDM office",
+      "Submit supporting documents",
+      "Track status through the portal or by contacting the Relief Fund office"
+    ],
+    "whereToApply": "Office of the Chief Minister's Relief Fund, Rajasthan (cmrelief.rajasthan.gov.in), or the local District Collector's office.",
+    "notes": "Relief amounts are set administratively and can change; confirm the current amount directly with the Relief Fund office before relying on any figure quoted elsewhere. Contact: 0141-2227679, cmrf.cmo@rajasthan.gov.in."
   },
   {
     "id": "insurance-claim-documentation",
