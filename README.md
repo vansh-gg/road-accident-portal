@@ -1,61 +1,51 @@
 # RakshaSetu — Road Accident Compensation & Rehabilitation Portal
 
-**Design and Development of an Online Portal for Road Accident Compensation and Rehabilitation Schemes**
-SRM Community Connect (21GNP301L) · Academic Year 2025–26 · CSE Academic Submission
+**Live:** [road-accident-portal.vercel.app](https://road-accident-portal.vercel.app)
 
-## What this is
+An informational web portal that helps road accident victims, survivors, and
+their families in India find and understand:
 
-RakshaSetu is an academic informational web portal that helps road accident
-victims, survivors, and their families understand:
-
-- Government compensation schemes (central, state, and hit-and-run cases)
-- Rehabilitation and disability support
+- Emergency treatment support (PM-RAHAT free cashless treatment)
+- Compensation pathways (Hit & Run, Section 164 no-fault, Section 166 fault-based)
+- State-level schemes (Rajasthan: Mukhyamantri Chiranjeevi Accident Insurance, CM Relief Fund)
 - Legal aid through District Legal Services Authorities and MACT
-- Documents required at each stage (medical, police, legal, compensation)
+- Rehabilitation and disability support
+- Required documents at each stage
 - Road safety awareness and Good Samaritan protections
 
-It is a **prototype for academic demonstration only**. It does not provide
-legal advice, medical advice, emergency services, or direct government
-application submission. All content should be verified with official
-government authorities.
+Available in **English and Hindi**, with a language choice shown on first visit
+and a toggle available on every page after that.
+
+It is an **informational prototype**, not a substitute for legal advice,
+medical advice, emergency services, or official government portals. All
+scheme details should be verified with the concerned government authority.
 
 ## Tech stack
 
 - React 19 + Vite
 - Tailwind CSS v4
 - React Router v7
-- Static JSON data (no backend required)
+- Static JSON data — no backend, no database
 
-## Getting started
-
-**First time only:** double-click the setup script for your operating system —
-this installs everything needed.
-
-| Your computer | Double-click this file (first time only) |
-|---|---|
-| Windows | `install-and-run.bat` |
-| Mac | `install-and-run.command` |
-| Linux | `install-and-run.sh` (run `bash install-and-run.sh` in a terminal) |
-
-**Every time after that**, just use the quick-start file instead — it skips
-the install step entirely and starts the app straight away:
-
-| Your computer | Double-click this file (every time after) |
-|---|---|
-| Windows | `run.bat` |
-| Mac | `run.command` |
-| Linux | `run.sh` (run `bash run.sh` in a terminal) |
-
-Either way, your browser opens automatically at `http://localhost:5173`.
-
-**Manual way**, if you prefer the terminal:
+## Local development
 
 ```bash
-npm install       # first time only
-npm run dev       # every time after
-npm run build     # production build to /dist
-npm run preview   # preview the production build
-npm run lint      # run oxlint
+npm install
+npm run dev       # local dev server at http://localhost:5173
+npm run build      # production build to /dist
+npm run preview    # preview the production build
+npm run lint        # run oxlint
+```
+
+## Deployment
+
+This repo is connected to Vercel — every push to `main` deploys automatically.
+No manual build or upload step is needed.
+
+```bash
+git add -A
+git commit -m "your message"
+git push
 ```
 
 ## Project structure
@@ -63,44 +53,46 @@ npm run lint      # run oxlint
 ```
 src/
   components/   Navbar, Footer, SchemeCard, QuestionCard, ChecklistItem,
-                SectionHeader, StatCard, InfoCard
+                SectionHeader, StatCard, InfoCard, HelplineBanner,
+                LanguageSplash
+  i18n/
+    LanguageContext.jsx   English/Hindi state, persisted in localStorage
+    strings.js            All translated UI text
   data/
-    schemes.json   10 sample scheme/resource records
+    schemes.json   13 scheme/resource records (central + Rajasthan state)
   pages/
-    Home.jsx           Landing page with hero, categories, and emergency note
+    Home.jsx           Hero, categories, emergency note, helplines
     FindScheme.jsx      6-question guided flow with rule-based recommendation
     Schemes.jsx         Searchable, filterable scheme directory
     SchemeDetail.jsx    Full detail view for a single scheme (/schemes/:id)
     Documents.jsx       Document checklist grouped by case type
     LegalAid.jsx        Legal aid & rehabilitation guidance
     RoadSafety.jsx      Road safety awareness resources
-    About.jsx           Academic project summary and disclaimer
+    About.jsx           Project summary and disclaimer
     NotFound.jsx        404 fallback page
   App.jsx         Routing and layout
-  main.jsx        Entry point (wraps App in BrowserRouter)
+  main.jsx        Entry point (wraps App in BrowserRouter + LanguageProvider)
   index.css       Tailwind v4 theme tokens and base styles
 ```
 
 ## How the "Find My Scheme" recommendation works
 
-The flow asks six questions (who it's for, accident outcome, hit-and-run
-status, FIR status, vehicle identification, and support type needed). Answers
-are matched against a simple rule-based function (`recommend()` in
-`FindScheme.jsx`) that maps specific answer combinations to relevant scheme
-IDs from `schemes.json`, along with a plain-language reason for each match.
-No AI or backend call is involved — this is deterministic, transparent logic
-suitable for an academic prototype.
+Six questions (who it's for, accident outcome, hit-and-run status, FIR
+status, vehicle identification, support type needed) are matched against a
+rule-based function (`recommend()` in `FindScheme.jsx`) that maps answer
+combinations to specific scheme IDs in `schemes.json`, with a plain-language
+reason shown for each match. No AI or backend call — deterministic and
+transparent by design.
 
 ## Adding or editing schemes
 
-All scheme content lives in `src/data/schemes.json`. Each entry follows this
-shape:
+All scheme content lives in `src/data/schemes.json`:
 
 ```json
 {
   "id": "unique-id",
   "name": "Scheme name",
-  "category": "Compensation | Legal Aid | Rehabilitation | Documents | Awareness",
+  "category": "Emergency Treatment | Compensation | Legal Aid | Rehabilitation | Documents | Awareness",
   "type": "Central | State | NGO/Support | Guidance",
   "description": "One-line summary",
   "eligibility": ["..."],
@@ -112,12 +104,20 @@ shape:
 }
 ```
 
-Adding a new object automatically makes it searchable in the Scheme
-Directory and viewable at `/schemes/:id`.
+Adding an entry automatically makes it searchable in the directory and
+viewable at `/schemes/:id`. Scheme detail content is currently English-only;
+Hindi translation of this content is a planned next step (UI chrome — nav,
+homepage, questionnaire, disclaimers — is already fully bilingual).
+
+## Adding translations
+
+UI text lives in `src/i18n/strings.js` as parallel `en` / `hi` objects keyed
+by the same string ID. Add a new key to both objects, then reference it with
+`t("your_key")` via `useLanguage()` in any component.
 
 ## Disclaimer
 
-This portal is an academic informational project. It does not replace
-official government portals, legal advice, medical advice, or emergency
-services. Users should verify all scheme details with the concerned
-government authority.
+This portal is an informational project. It does not replace official
+government portals, legal advice, medical advice, or emergency services.
+Users should verify all scheme details with the concerned government
+authority.
